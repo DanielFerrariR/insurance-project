@@ -12,8 +12,13 @@ interface NameStepProps {
 }
 
 const NameStep: React.FC<NameStepProps> = ({ insurance, updateForm }) => {
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+    updateForm({ ...insurance, step: insurance.step + 1 })
+  }
+
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name-step-name">Name</label> :{' '}
         <input
@@ -36,12 +41,12 @@ const NameStep: React.FC<NameStepProps> = ({ insurance, updateForm }) => {
         />
       </div>
       <button
+        type="submit"
         disabled={insurance.name.length === 0 || insurance.surname.length === 0}
-        onClick={() => updateForm({ ...insurance, step: insurance.step + 1 })}
       >
         Next
       </button>
-    </>
+    </form>
   )
 }
 

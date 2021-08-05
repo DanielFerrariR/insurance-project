@@ -11,8 +11,13 @@ interface EmailStepProps {
 }
 
 const EmailStep: React.FC<EmailStepProps> = ({ insurance, updateForm }) => {
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+    updateForm({ ...insurance, step: insurance.step + 1 })
+  }
+
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="email-step-email">Email:</label>{' '}
         <input
@@ -24,13 +29,10 @@ const EmailStep: React.FC<EmailStepProps> = ({ insurance, updateForm }) => {
           value={insurance.email}
         />
       </div>
-      <button
-        disabled={insurance.email.length === 0}
-        onClick={() => updateForm({ ...insurance, step: insurance.step + 1 })}
-      >
+      <button type="submit" disabled={insurance.email.length === 0}>
         Next
       </button>
-    </>
+    </form>
   )
 }
 

@@ -11,8 +11,13 @@ interface AgeStepProps {
 }
 
 const AgeStep: React.FC<AgeStepProps> = ({ insurance, updateForm }) => {
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+    updateForm({ ...insurance, step: insurance.step + 1 })
+  }
+
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <div>
         Age:{' '}
         <input
@@ -23,13 +28,10 @@ const AgeStep: React.FC<AgeStepProps> = ({ insurance, updateForm }) => {
           value={insurance.age}
         />
       </div>
-      <button
-        disabled={insurance.age === 0}
-        onClick={() => updateForm({ ...insurance, step: insurance.step + 1 })}
-      >
+      <button type="submit" disabled={insurance.age === 0}>
         Next
       </button>
-    </>
+    </form>
   )
 }
 
