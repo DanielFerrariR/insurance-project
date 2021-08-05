@@ -2,33 +2,26 @@ import * as React from 'react'
 import { useDispatch } from '../../store'
 import {
   CarInsuranceState,
-  addCarInsuranceAge,
-  addCarInsuranceStep,
+  updateCarInsuranceForm,
 } from '../../store/carInsurance'
 import {
   LifeInsuranceState,
-  addLifeInsuranceAge,
-  addLifeInsuranceStep,
+  updateLifeInsuranceForm,
 } from '../../store/lifeInsurance'
 import {
   HomeInsuranceState,
-  addHomeInsuranceAge,
-  addHomeInsuranceStep,
+  updateHomeInsuranceForm,
 } from '../../store/homeInsurance'
 
 interface AgeStepProps {
   insurance: CarInsuranceState | LifeInsuranceState | HomeInsuranceState
-  addAge:
-    | typeof addCarInsuranceAge
-    | typeof addLifeInsuranceAge
-    | typeof addHomeInsuranceAge
-  addStep:
-    | typeof addCarInsuranceStep
-    | typeof addLifeInsuranceStep
-    | typeof addHomeInsuranceStep
+  updateForm:
+    | typeof updateCarInsuranceForm
+    | typeof updateLifeInsuranceForm
+    | typeof updateHomeInsuranceForm
 }
 
-const AgeStep: React.FC<AgeStepProps> = ({ insurance, addAge, addStep }) => {
+const AgeStep: React.FC<AgeStepProps> = ({ insurance, updateForm }) => {
   const dispatch = useDispatch()
 
   return (
@@ -38,14 +31,18 @@ const AgeStep: React.FC<AgeStepProps> = ({ insurance, addAge, addStep }) => {
         <input
           type="number"
           onChange={(event) =>
-            dispatch(addAge(insurance, Number(event.target.value)))
+            dispatch(
+              updateForm({ ...insurance, age: Number(event.target.value) })
+            )
           }
           value={insurance.age}
         />
       </div>
       <button
         disabled={insurance.age === 0}
-        onClick={() => dispatch(addStep(insurance))}
+        onClick={() =>
+          dispatch(updateForm({ ...insurance, step: insurance.step + 1 }))
+        }
       >
         Next
       </button>

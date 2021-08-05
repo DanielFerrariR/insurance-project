@@ -1,10 +1,6 @@
 import {
   LifeInsuranceState,
-  ADD_LIFE_INSURANCE_NAME,
-  ADD_LIFE_INSURANCE_SURNAME,
-  ADD_LIFE_INSURANCE_EMAIL,
-  ADD_LIFE_INSURANCE_AGE,
-  ADD_LIFE_INSURANCE_STEP,
+  UPDATE_LIFE_INSURANCE_FORM,
   RESET_LIFE_INSURANCE_FORM,
   LifeInsuranceActionTypes,
 } from './types'
@@ -17,20 +13,12 @@ const initialState: LifeInsuranceState = {
   step: 0,
 }
 
-const placesReducer = (
+const lifeInsuranceReducer = (
   state: LifeInsuranceState = initialState,
   action: LifeInsuranceActionTypes
 ): LifeInsuranceState => {
   switch (action.type) {
-    case ADD_LIFE_INSURANCE_NAME:
-      return action.payload
-    case ADD_LIFE_INSURANCE_SURNAME:
-      return action.payload
-    case ADD_LIFE_INSURANCE_EMAIL:
-      return action.payload
-    case ADD_LIFE_INSURANCE_AGE:
-      return action.payload
-    case ADD_LIFE_INSURANCE_STEP:
+    case UPDATE_LIFE_INSURANCE_FORM:
       return action.payload
     case RESET_LIFE_INSURANCE_FORM:
       return initialState
@@ -39,4 +27,4 @@ const placesReducer = (
   }
 }
 
-export default placesReducer
+export default lifeInsuranceReducer

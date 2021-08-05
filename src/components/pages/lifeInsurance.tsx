@@ -5,11 +5,7 @@ import SummaryStep from '../organisms/SummaryStep'
 import NameStep from '../organisms/NameStep'
 import { useSelector } from '../../store'
 import {
-  addLifeInsuranceName,
-  addLifeInsuranceSurname,
-  addLifeInsuranceEmail,
-  addLifeInsuranceAge,
-  addLifeInsuranceStep,
+  updateLifeInsuranceForm,
   resetLifeInsuranceForm,
 } from '../../store/lifeInsurance'
 
@@ -22,23 +18,19 @@ const LifeInsurance: React.FC = () => {
       {lifeInsurance.step === 0 && (
         <NameStep
           insurance={lifeInsurance}
-          addName={addLifeInsuranceName}
-          addSurname={addLifeInsuranceSurname}
-          addStep={addLifeInsuranceStep}
+          updateForm={updateLifeInsuranceForm}
         />
       )}
       {lifeInsurance.step === 1 && (
         <EmailStep
           insurance={lifeInsurance}
-          addEmail={addLifeInsuranceEmail}
-          addStep={addLifeInsuranceStep}
+          updateForm={updateLifeInsuranceForm}
         />
       )}
       {lifeInsurance.step === 2 && (
         <AgeStep
           insurance={lifeInsurance}
-          addAge={addLifeInsuranceAge}
-          addStep={addLifeInsuranceStep}
+          updateForm={updateLifeInsuranceForm}
         />
       )}
       {lifeInsurance.step === 3 && (

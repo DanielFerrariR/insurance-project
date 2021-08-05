@@ -2,45 +2,26 @@ import * as React from 'react'
 import { useDispatch } from '../../store'
 import {
   CarInsuranceState,
-  addCarInsuranceName,
-  addCarInsuranceSurname,
-  addCarInsuranceStep,
+  updateCarInsuranceForm,
 } from '../../store/carInsurance'
 import {
   LifeInsuranceState,
-  addLifeInsuranceName,
-  addLifeInsuranceSurname,
-  addLifeInsuranceStep,
+  updateLifeInsuranceForm,
 } from '../../store/lifeInsurance'
 import {
   HomeInsuranceState,
-  addHomeInsuranceName,
-  addHomeInsuranceSurname,
-  addHomeInsuranceStep,
+  updateHomeInsuranceForm,
 } from '../../store/homeInsurance'
 
 interface NameStepProps {
   insurance: CarInsuranceState | LifeInsuranceState | HomeInsuranceState
-  addName:
-    | typeof addCarInsuranceName
-    | typeof addLifeInsuranceName
-    | typeof addHomeInsuranceName
-  addSurname:
-    | typeof addCarInsuranceSurname
-    | typeof addLifeInsuranceSurname
-    | typeof addHomeInsuranceSurname
-  addStep:
-    | typeof addCarInsuranceStep
-    | typeof addLifeInsuranceStep
-    | typeof addHomeInsuranceStep
+  updateForm:
+    | typeof updateCarInsuranceForm
+    | typeof updateLifeInsuranceForm
+    | typeof updateHomeInsuranceForm
 }
 
-const NameStep: React.FC<NameStepProps> = ({
-  insurance,
-  addName,
-  addSurname,
-  addStep,
-}) => {
+const NameStep: React.FC<NameStepProps> = ({ insurance, updateForm }) => {
   const dispatch = useDispatch()
 
   return (
@@ -50,7 +31,9 @@ const NameStep: React.FC<NameStepProps> = ({
         <input
           id="name-step-name"
           placeholder={`Type your name`}
-          onChange={(event) => dispatch(addName(insurance, event.target.value))}
+          onChange={(event) =>
+            dispatch(updateForm({ ...insurance, name: event.target.value }))
+          }
           value={insurance.name}
         />
         <br />
@@ -59,14 +42,16 @@ const NameStep: React.FC<NameStepProps> = ({
           id="name-step-surname"
           placeholder={`Type your surname`}
           onChange={(event) =>
-            dispatch(addSurname(insurance, event.target.value))
+            dispatch(updateForm({ ...insurance, surname: event.target.value }))
           }
           value={insurance.surname}
         />
       </div>
       <button
         disabled={insurance.name.length === 0 || insurance.surname.length === 0}
-        onClick={() => dispatch(addStep(insurance))}
+        onClick={() =>
+          dispatch(updateForm({ ...insurance, step: insurance.step + 1 }))
+        }
       >
         Next
       </button>

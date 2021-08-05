@@ -6,40 +6,12 @@ export type LifeInsuranceState = {
   step: number
 }
 
-export const ADD_LIFE_INSURANCE_NAME = 'ADD_LIFE_INSURANCE_NAME'
-
-export const ADD_LIFE_INSURANCE_SURNAME = 'ADD_LIFE_INSURANCE_SURNAME'
-
-export const ADD_LIFE_INSURANCE_EMAIL = 'ADD_LIFE_INSURANCE_EMAIL'
-
-export const ADD_LIFE_INSURANCE_AGE = 'ADD_LIFE_INSURANCE_AGE'
-
-export const ADD_LIFE_INSURANCE_STEP = 'ADD_LIFE_INSURANCE_STEP'
+export const UPDATE_LIFE_INSURANCE_FORM = 'UPDATE_LIFE_INSURANCE_FORM'
 
 export const RESET_LIFE_INSURANCE_FORM = 'RESET_LIFE_INSURANCE_FORM'
 
-export interface AddLifeInsuranceNameAction {
-  type: typeof ADD_LIFE_INSURANCE_NAME
-  payload: LifeInsuranceState
-}
-
-export interface AddLifeInsuranceSurnameAction {
-  type: typeof ADD_LIFE_INSURANCE_SURNAME
-  payload: LifeInsuranceState
-}
-
-export interface AddLifeInsuranceEmailAction {
-  type: typeof ADD_LIFE_INSURANCE_EMAIL
-  payload: LifeInsuranceState
-}
-
-export interface AddLifeInsuranceAgeAction {
-  type: typeof ADD_LIFE_INSURANCE_AGE
-  payload: LifeInsuranceState
-}
-
-export interface AddLifeInsuranceStepAction {
-  type: typeof ADD_LIFE_INSURANCE_STEP
+export interface updateLifeInsuranceFormAction {
+  type: typeof UPDATE_LIFE_INSURANCE_FORM
   payload: LifeInsuranceState
 }
 
@@ -48,9 +20,5 @@ export interface ResetLifeInsuranceFormAction {
 }
 
 export type LifeInsuranceActionTypes =
-  | AddLifeInsuranceNameAction
-  | AddLifeInsuranceSurnameAction
-  | AddLifeInsuranceEmailAction
-  | AddLifeInsuranceAgeAction
-  | AddLifeInsuranceStepAction
+  | updateLifeInsuranceFormAction
   | ResetLifeInsuranceFormAction

@@ -1,10 +1,6 @@
 import {
   HomeInsuranceState,
-  ADD_HOME_INSURANCE_NAME,
-  ADD_HOME_INSURANCE_SURNAME,
-  ADD_HOME_INSURANCE_EMAIL,
-  ADD_HOME_INSURANCE_AGE,
-  ADD_HOME_INSURANCE_STEP,
+  UPDATE_HOME_INSURANCE_FORM,
   RESET_HOME_INSURANCE_FORM,
   HomeInsuranceActionTypes,
 } from './types'
@@ -17,20 +13,12 @@ const initialState: HomeInsuranceState = {
   step: 0,
 }
 
-const placesReducer = (
+const homeInsuranceReducer = (
   state: HomeInsuranceState = initialState,
   action: HomeInsuranceActionTypes
 ): HomeInsuranceState => {
   switch (action.type) {
-    case ADD_HOME_INSURANCE_NAME:
-      return action.payload
-    case ADD_HOME_INSURANCE_SURNAME:
-      return action.payload
-    case ADD_HOME_INSURANCE_EMAIL:
-      return action.payload
-    case ADD_HOME_INSURANCE_AGE:
-      return action.payload
-    case ADD_HOME_INSURANCE_STEP:
+    case UPDATE_HOME_INSURANCE_FORM:
       return action.payload
     case RESET_HOME_INSURANCE_FORM:
       return initialState
@@ -39,4 +27,4 @@ const placesReducer = (
   }
 }
 
-export default placesReducer
+export default homeInsuranceReducer

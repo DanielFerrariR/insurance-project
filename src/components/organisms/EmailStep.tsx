@@ -2,37 +2,26 @@ import * as React from 'react'
 import { useDispatch } from '../../store'
 import {
   CarInsuranceState,
-  addCarInsuranceEmail,
-  addCarInsuranceStep,
+  updateCarInsuranceForm,
 } from '../../store/carInsurance'
 import {
   LifeInsuranceState,
-  addLifeInsuranceEmail,
-  addLifeInsuranceStep,
+  updateLifeInsuranceForm,
 } from '../../store/lifeInsurance'
 import {
   HomeInsuranceState,
-  addHomeInsuranceEmail,
-  addHomeInsuranceStep,
+  updateHomeInsuranceForm,
 } from '../../store/homeInsurance'
 
 interface EmailStepProps {
   insurance: CarInsuranceState | LifeInsuranceState | HomeInsuranceState
-  addEmail:
-    | typeof addCarInsuranceEmail
-    | typeof addLifeInsuranceEmail
-    | typeof addHomeInsuranceEmail
-  addStep:
-    | typeof addCarInsuranceStep
-    | typeof addLifeInsuranceStep
-    | typeof addHomeInsuranceStep
+  updateForm:
+    | typeof updateCarInsuranceForm
+    | typeof updateLifeInsuranceForm
+    | typeof updateHomeInsuranceForm
 }
 
-const EmailStep: React.FC<EmailStepProps> = ({
-  insurance,
-  addEmail,
-  addStep,
-}) => {
+const EmailStep: React.FC<EmailStepProps> = ({ insurance, updateForm }) => {
   const dispatch = useDispatch()
 
   return (
@@ -43,14 +32,16 @@ const EmailStep: React.FC<EmailStepProps> = ({
           id="email-step-email"
           type="email"
           onChange={(event) =>
-            dispatch(addEmail(insurance, event.target.value))
+            dispatch(updateForm({ ...insurance, email: event.target.value }))
           }
           value={insurance.email}
         />
       </div>
       <button
         disabled={insurance.email.length === 0}
-        onClick={() => dispatch(addStep(insurance))}
+        onClick={() =>
+          dispatch(updateForm({ ...insurance, step: insurance.step + 1 }))
+        }
       >
         Next
       </button>
