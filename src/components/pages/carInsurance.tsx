@@ -1,8 +1,5 @@
-import React from 'react'
-import AgeStep from '../organisms/AgeStep'
-import EmailStep from '../organisms/EmailStep'
-import SummaryStep from '../organisms/SummaryStep'
-import NameStep from '../organisms/NameStep'
+import * as React from 'react'
+import { AgeStep, EmailStep, SummaryStep, NameStep } from '../organisms'
 import { useSelector, useDispatch } from '../../store'
 import {
   updateCarInsuranceForm,
@@ -13,6 +10,8 @@ import {
 const CarInsurance: React.FC = () => {
   const carInsurance = useSelector((state) => state.carInsurance)
   const dispatch = useDispatch()
+  const steps = [NameStep, EmailStep, AgeStep, SummaryStep]
+  const Component = steps[carInsurance.step]
 
   const updatedForm = (form: Partial<CarInsuranceState>) =>
     dispatch(updateCarInsuranceForm({ ...carInsurance, ...form }))
@@ -22,18 +21,11 @@ const CarInsurance: React.FC = () => {
   return (
     <>
       <h4>Buying Car Insurance </h4>
-      {carInsurance.step === 0 && (
-        <NameStep insurance={carInsurance} updateForm={updatedForm} />
-      )}
-      {carInsurance.step === 1 && (
-        <EmailStep insurance={carInsurance} updateForm={updatedForm} />
-      )}
-      {carInsurance.step === 2 && (
-        <AgeStep insurance={carInsurance} updateForm={updatedForm} />
-      )}
-      {carInsurance.step === 3 && (
-        <SummaryStep insurance={carInsurance} resetForm={resetForm} />
-      )}
+      <Component
+        insurance={carInsurance}
+        updateForm={updatedForm}
+        resetForm={resetForm}
+      />
     </>
   )
 }

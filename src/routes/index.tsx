@@ -9,7 +9,7 @@ import {
   LifeInsurance,
 } from '../components/pages'
 
-const Routes = () => {
+const Routes: React.FC = () => {
   return (
     <Router>
       <div className="App">
