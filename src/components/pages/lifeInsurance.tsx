@@ -17,7 +17,7 @@ const LifeInsurance: React.FC = () => {
   const updatedForm = (form: Partial<LifeInsuranceState>) =>
     dispatch(updateLifeInsuranceForm({ ...lifeInsurance, ...form }))
 
-  const resetForm = () => resetLifeInsuranceForm()
+  const resetForm = () => dispatch(resetLifeInsuranceForm())
 
   return (
     <>
