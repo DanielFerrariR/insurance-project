@@ -25,10 +25,11 @@ const AgeStep: React.FC<AgeStepProps> = ({ insurance, updateForm }) => {
           onChange={(event) =>
             updateForm({ ...insurance, age: Number(event.target.value) })
           }
+          min={0}
           value={insurance.age}
         />
       </div>
-      <button type="submit" disabled={insurance.age === 0}>
+      <button type="submit" disabled={!insurance.age}>
         Next
       </button>
     </form>

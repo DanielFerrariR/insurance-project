@@ -40,10 +40,7 @@ const NameStep: React.FC<NameStepProps> = ({ insurance, updateForm }) => {
           value={insurance.surname}
         />
       </div>
-      <button
-        type="submit"
-        disabled={insurance.name.length === 0 || insurance.surname.length === 0}
-      >
+      <button type="submit" disabled={!insurance.name || !insurance.surname}>
         Next
       </button>
     </form>

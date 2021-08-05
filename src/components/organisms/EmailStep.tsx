@@ -29,7 +29,7 @@ const EmailStep: React.FC<EmailStepProps> = ({ insurance, updateForm }) => {
           value={insurance.email}
         />
       </div>
-      <button type="submit" disabled={insurance.email.length === 0}>
+      <button type="submit" disabled={!insurance.email}>
         Next
       </button>
     </form>
