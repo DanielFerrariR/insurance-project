@@ -2,18 +2,18 @@ import * as React from 'react'
 import { useDispatch } from '../../store'
 import {
   CarInsuranceState,
-  addAge as addCarInsuranceAge,
-  addStep as addCarInsuranceStep,
+  addCarInsuranceAge,
+  addCarInsuranceStep,
 } from '../../store/carInsurance'
 import {
   LifeInsuranceState,
-  addAge as addLifeInsuranceAge,
-  addStep as addLifeInsuranceStep,
+  addLifeInsuranceAge,
+  addLifeInsuranceStep,
 } from '../../store/lifeInsurance'
 import {
   HomeInsuranceState,
-  addAge as addHomeInsuranceAge,
-  addStep as addHomeInsuranceStep,
+  addHomeInsuranceAge,
+  addHomeInsuranceStep,
 } from '../../store/homeInsurance'
 
 interface AgeStepProps {

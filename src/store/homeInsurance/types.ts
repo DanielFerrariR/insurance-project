@@ -6,51 +6,51 @@ export type HomeInsuranceState = {
   step: number
 }
 
-export const ADD_NAME = 'ADD_NAME'
+export const ADD_HOME_INSURANCE_NAME = 'ADD_HOME_INSURANCE_NAME'
 
-export const ADD_SURNAME = 'ADD_SURNAME'
+export const ADD_HOME_INSURANCE_SURNAME = 'ADD_HOME_INSURANCE_SURNAME'
 
-export const ADD_EMAIL = 'ADD_EMAIL'
+export const ADD_HOME_INSURANCE_EMAIL = 'ADD_HOME_INSURANCE_EMAIL'
 
-export const ADD_AGE = 'ADD_AGE'
+export const ADD_HOME_INSURANCE_AGE = 'ADD_HOME_INSURANCE_AGE'
 
-export const ADD_STEP = 'ADD_STEP'
+export const ADD_HOME_INSURANCE_STEP = 'ADD_HOME_INSURANCE_STEP'
 
-export const RESET_FORM = 'RESET_FORM'
+export const RESET_HOME_INSURANCE_FORM = 'RESET_HOME_INSURANCE_FORM'
 
-export interface AddNameAction {
-  type: typeof ADD_NAME
+export interface AddHomeInsuranceNameAction {
+  type: typeof ADD_HOME_INSURANCE_NAME
   payload: HomeInsuranceState
 }
 
-export interface AddSurnameAction {
-  type: typeof ADD_SURNAME
+export interface AddHomeInsuranceSurnameAction {
+  type: typeof ADD_HOME_INSURANCE_SURNAME
   payload: HomeInsuranceState
 }
 
-export interface AddEmailAction {
-  type: typeof ADD_EMAIL
+export interface AddHomeInsuranceEmailAction {
+  type: typeof ADD_HOME_INSURANCE_EMAIL
   payload: HomeInsuranceState
 }
 
-export interface AddAgeAction {
-  type: typeof ADD_AGE
+export interface AddHomeInsuranceAgeAction {
+  type: typeof ADD_HOME_INSURANCE_AGE
   payload: HomeInsuranceState
 }
 
-export interface AddStepAction {
-  type: typeof ADD_STEP
+export interface AddHomeInsuranceStepAction {
+  type: typeof ADD_HOME_INSURANCE_STEP
   payload: HomeInsuranceState
 }
 
-export interface ResetFormAction {
-  type: typeof RESET_FORM
+export interface ResetHomeInsuranceFormAction {
+  type: typeof RESET_HOME_INSURANCE_FORM
 }
 
 export type HomeInsuranceActionTypes =
-  | AddNameAction
-  | AddSurnameAction
-  | AddEmailAction
-  | AddAgeAction
-  | AddStepAction
-  | ResetFormAction
+  | AddHomeInsuranceNameAction
+  | AddHomeInsuranceSurnameAction
+  | AddHomeInsuranceEmailAction
+  | AddHomeInsuranceAgeAction
+  | AddHomeInsuranceStepAction
+  | ResetHomeInsuranceFormAction

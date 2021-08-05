@@ -2,18 +2,18 @@ import * as React from 'react'
 import { useDispatch } from '../../store'
 import {
   CarInsuranceState,
-  addEmail as addCarInsuranceEmail,
-  addStep as addCarInsuranceStep,
+  addCarInsuranceEmail,
+  addCarInsuranceStep,
 } from '../../store/carInsurance'
 import {
   LifeInsuranceState,
-  addEmail as addLifeInsuranceEmail,
-  addStep as addLifeInsuranceStep,
+  addLifeInsuranceEmail,
+  addLifeInsuranceStep,
 } from '../../store/lifeInsurance'
 import {
   HomeInsuranceState,
-  addEmail as addHomeInsuranceEmail,
-  addStep as addHomeInsuranceStep,
+  addHomeInsuranceEmail,
+  addHomeInsuranceStep,
 } from '../../store/homeInsurance'
 
 interface EmailStepProps {

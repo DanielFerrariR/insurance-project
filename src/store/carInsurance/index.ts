@@ -1,10 +1,10 @@
 export {
-  addName,
-  addSurname,
-  addEmail,
-  addAge,
-  addStep,
-  resetForm,
+  addCarInsuranceName,
+  addCarInsuranceSurname,
+  addCarInsuranceEmail,
+  addCarInsuranceAge,
+  addCarInsuranceStep,
+  resetCarInsuranceForm,
 } from './actions'
 export { default as carInsuranceReducer } from './reducers'
 export * from './types'

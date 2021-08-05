@@ -1,11 +1,11 @@
 import {
   CarInsuranceState,
-  ADD_NAME,
-  ADD_SURNAME,
-  ADD_EMAIL,
-  ADD_AGE,
-  ADD_STEP,
-  RESET_FORM,
+  ADD_CAR_INSURANCE_NAME,
+  ADD_CAR_INSURANCE_SURNAME,
+  ADD_CAR_INSURANCE_EMAIL,
+  ADD_CAR_INSURANCE_AGE,
+  ADD_CAR_INSURANCE_STEP,
+  RESET_CAR_INSURANCE_FORM,
   CarInsuranceActionTypes,
 } from './types'
 
@@ -22,17 +22,17 @@ const placesReducer = (
   action: CarInsuranceActionTypes
 ): CarInsuranceState => {
   switch (action.type) {
-    case ADD_NAME:
+    case ADD_CAR_INSURANCE_NAME:
       return action.payload
-    case ADD_SURNAME:
+    case ADD_CAR_INSURANCE_SURNAME:
       return action.payload
-    case ADD_EMAIL:
+    case ADD_CAR_INSURANCE_EMAIL:
       return action.payload
-    case ADD_AGE:
+    case ADD_CAR_INSURANCE_AGE:
       return action.payload
-    case ADD_STEP:
+    case ADD_CAR_INSURANCE_STEP:
       return action.payload
-    case RESET_FORM:
+    case RESET_CAR_INSURANCE_FORM:
       return initialState
     default:
       return state

@@ -1,80 +1,89 @@
 import {
   LifeInsuranceState,
-  ADD_NAME,
-  ADD_SURNAME,
-  ADD_EMAIL,
-  ADD_AGE,
-  ADD_STEP,
-  RESET_FORM,
-  AddNameAction,
-  AddSurnameAction,
-  AddEmailAction,
-  AddAgeAction,
-  AddStepAction,
-  ResetFormAction,
+  ADD_LIFE_INSURANCE_NAME,
+  ADD_LIFE_INSURANCE_SURNAME,
+  ADD_LIFE_INSURANCE_EMAIL,
+  ADD_LIFE_INSURANCE_AGE,
+  ADD_LIFE_INSURANCE_STEP,
+  RESET_LIFE_INSURANCE_FORM,
+  AddLifeInsuranceNameAction,
+  AddLifeInsuranceSurnameAction,
+  AddLifeInsuranceEmailAction,
+  AddLifeInsuranceAgeAction,
+  AddLifeInsuranceStepAction,
+  ResetLifeInsuranceFormAction,
 } from './types'
 
-const addName = (
-  lifeInsurance: LifeInsuranceState,
+const addLifeInsuranceName = (
+  carInsurance: LifeInsuranceState,
   name: LifeInsuranceState['name']
-): AddNameAction => {
-  const newLifeInsurance = { ...lifeInsurance, name }
+): AddLifeInsuranceNameAction => {
+  const newLifeInsurance = { ...carInsurance, name }
 
   return {
-    type: ADD_NAME,
+    type: ADD_LIFE_INSURANCE_NAME,
     payload: newLifeInsurance,
   }
 }
 
-const addSurname = (
-  lifeInsurance: LifeInsuranceState,
+const addLifeInsuranceSurname = (
+  carInsurance: LifeInsuranceState,
   surname: LifeInsuranceState['surname']
-): AddSurnameAction => {
-  const newLifeInsurance = { ...lifeInsurance, surname }
+): AddLifeInsuranceSurnameAction => {
+  const newLifeInsurance = { ...carInsurance, surname }
 
   return {
-    type: ADD_SURNAME,
+    type: ADD_LIFE_INSURANCE_SURNAME,
     payload: newLifeInsurance,
   }
 }
 
-const addEmail = (
-  lifeInsurance: LifeInsuranceState,
+const addLifeInsuranceEmail = (
+  carInsurance: LifeInsuranceState,
   email: LifeInsuranceState['name']
-): AddEmailAction => {
-  const newLifeInsurance = { ...lifeInsurance, email }
+): AddLifeInsuranceEmailAction => {
+  const newLifeInsurance = { ...carInsurance, email }
 
   return {
-    type: ADD_EMAIL,
+    type: ADD_LIFE_INSURANCE_EMAIL,
     payload: newLifeInsurance,
   }
 }
 
-const addAge = (
-  lifeInsurance: LifeInsuranceState,
+const addLifeInsuranceAge = (
+  carInsurance: LifeInsuranceState,
   age: LifeInsuranceState['age']
-): AddAgeAction => {
-  const newLifeInsurance = { ...lifeInsurance, age }
+): AddLifeInsuranceAgeAction => {
+  const newLifeInsurance = { ...carInsurance, age }
 
   return {
-    type: ADD_AGE,
+    type: ADD_LIFE_INSURANCE_AGE,
     payload: newLifeInsurance,
   }
 }
 
-const addStep = (lifeInsurance: LifeInsuranceState): AddStepAction => {
-  const newLifeInsurance = { ...lifeInsurance, step: lifeInsurance.step + 1 }
+const addLifeInsuranceStep = (
+  carInsurance: LifeInsuranceState
+): AddLifeInsuranceStepAction => {
+  const newLifeInsurance = { ...carInsurance, step: carInsurance.step + 1 }
 
   return {
-    type: ADD_STEP,
+    type: ADD_LIFE_INSURANCE_STEP,
     payload: newLifeInsurance,
   }
 }
 
-const resetForm = (): ResetFormAction => {
+const resetLifeInsuranceForm = (): ResetLifeInsuranceFormAction => {
   return {
-    type: RESET_FORM,
+    type: RESET_LIFE_INSURANCE_FORM,
   }
 }
 
-export { addName, addSurname, addEmail, addAge, addStep, resetForm }
+export {
+  addLifeInsuranceName,
+  addLifeInsuranceSurname,
+  addLifeInsuranceEmail,
+  addLifeInsuranceAge,
+  addLifeInsuranceStep,
+  resetLifeInsuranceForm,
+}

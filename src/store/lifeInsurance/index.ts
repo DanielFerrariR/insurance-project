@@ -1,10 +1,10 @@
 export {
-  addName,
-  addSurname,
-  addEmail,
-  addAge,
-  addStep,
-  resetForm,
+  addLifeInsuranceName,
+  addLifeInsuranceSurname,
+  addLifeInsuranceEmail,
+  addLifeInsuranceAge,
+  addLifeInsuranceStep,
+  resetLifeInsuranceForm,
 } from './actions'
 export { default as lifeInsuranceReducer } from './reducers'
 export * from './types'

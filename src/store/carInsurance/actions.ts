@@ -1,80 +1,89 @@
 import {
   CarInsuranceState,
-  ADD_NAME,
-  ADD_SURNAME,
-  ADD_EMAIL,
-  ADD_AGE,
-  ADD_STEP,
-  RESET_FORM,
-  AddNameAction,
-  AddSurnameAction,
-  AddEmailAction,
-  AddAgeAction,
-  AddStepAction,
-  ResetFormAction,
+  ADD_CAR_INSURANCE_NAME,
+  ADD_CAR_INSURANCE_SURNAME,
+  ADD_CAR_INSURANCE_EMAIL,
+  ADD_CAR_INSURANCE_AGE,
+  ADD_CAR_INSURANCE_STEP,
+  RESET_CAR_INSURANCE_FORM,
+  AddCarInsuranceNameAction,
+  AddCarInsuranceSurnameAction,
+  AddCarInsuranceEmailAction,
+  AddCarInsuranceAgeAction,
+  AddCarInsuranceStepAction,
+  ResetCarInsuranceFormAction,
 } from './types'
 
-const addName = (
+const addCarInsuranceName = (
   carInsurance: CarInsuranceState,
   name: CarInsuranceState['name']
-): AddNameAction => {
+): AddCarInsuranceNameAction => {
   const newCarInsurance = { ...carInsurance, name }
 
   return {
-    type: ADD_NAME,
+    type: ADD_CAR_INSURANCE_NAME,
     payload: newCarInsurance,
   }
 }
 
-const addSurname = (
+const addCarInsuranceSurname = (
   carInsurance: CarInsuranceState,
   surname: CarInsuranceState['surname']
-): AddSurnameAction => {
+): AddCarInsuranceSurnameAction => {
   const newCarInsurance = { ...carInsurance, surname }
 
   return {
-    type: ADD_SURNAME,
+    type: ADD_CAR_INSURANCE_SURNAME,
     payload: newCarInsurance,
   }
 }
 
-const addEmail = (
+const addCarInsuranceEmail = (
   carInsurance: CarInsuranceState,
   email: CarInsuranceState['name']
-): AddEmailAction => {
+): AddCarInsuranceEmailAction => {
   const newCarInsurance = { ...carInsurance, email }
 
   return {
-    type: ADD_EMAIL,
+    type: ADD_CAR_INSURANCE_EMAIL,
     payload: newCarInsurance,
   }
 }
 
-const addAge = (
+const addCarInsuranceAge = (
   carInsurance: CarInsuranceState,
   age: CarInsuranceState['age']
-): AddAgeAction => {
+): AddCarInsuranceAgeAction => {
   const newCarInsurance = { ...carInsurance, age }
 
   return {
-    type: ADD_AGE,
+    type: ADD_CAR_INSURANCE_AGE,
     payload: newCarInsurance,
   }
 }
 
-const addStep = (carInsurance: CarInsuranceState): AddStepAction => {
+const addCarInsuranceStep = (
+  carInsurance: CarInsuranceState
+): AddCarInsuranceStepAction => {
   const newCarInsurance = { ...carInsurance, step: carInsurance.step + 1 }
 
   return {
-    type: ADD_STEP,
+    type: ADD_CAR_INSURANCE_STEP,
     payload: newCarInsurance,
   }
 }
 
-const resetForm = (): ResetFormAction => {
+const resetCarInsuranceForm = (): ResetCarInsuranceFormAction => {
   return {
-    type: RESET_FORM,
+    type: RESET_CAR_INSURANCE_FORM,
   }
 }
 
-export { addName, addSurname, addEmail, addAge, addStep, resetForm }
+export {
+  addCarInsuranceName,
+  addCarInsuranceSurname,
+  addCarInsuranceEmail,
+  addCarInsuranceAge,
+  addCarInsuranceStep,
+  resetCarInsuranceForm,
+}

@@ -6,51 +6,51 @@ export type CarInsuranceState = {
   step: number
 }
 
-export const ADD_NAME = 'ADD_NAME'
+export const ADD_CAR_INSURANCE_NAME = 'ADD_CAR_INSURANCE_NAME'
 
-export const ADD_SURNAME = 'ADD_SURNAME'
+export const ADD_CAR_INSURANCE_SURNAME = 'ADD_CAR_INSURANCE_SURNAME'
 
-export const ADD_EMAIL = 'ADD_EMAIL'
+export const ADD_CAR_INSURANCE_EMAIL = 'ADD_CAR_INSURANCE_EMAIL'
 
-export const ADD_AGE = 'ADD_AGE'
+export const ADD_CAR_INSURANCE_AGE = 'ADD_CAR_INSURANCE_AGE'
 
-export const ADD_STEP = 'ADD_STEP'
+export const ADD_CAR_INSURANCE_STEP = 'ADD_CAR_INSURANCE_STEP'
 
-export const RESET_FORM = 'RESET_FORM'
+export const RESET_CAR_INSURANCE_FORM = 'RESET_CAR_INSURANCE_FORM'
 
-export interface AddNameAction {
-  type: typeof ADD_NAME
+export interface AddCarInsuranceNameAction {
+  type: typeof ADD_CAR_INSURANCE_NAME
   payload: CarInsuranceState
 }
 
-export interface AddSurnameAction {
-  type: typeof ADD_SURNAME
+export interface AddCarInsuranceSurnameAction {
+  type: typeof ADD_CAR_INSURANCE_SURNAME
   payload: CarInsuranceState
 }
 
-export interface AddEmailAction {
-  type: typeof ADD_EMAIL
+export interface AddCarInsuranceEmailAction {
+  type: typeof ADD_CAR_INSURANCE_EMAIL
   payload: CarInsuranceState
 }
 
-export interface AddAgeAction {
-  type: typeof ADD_AGE
+export interface AddCarInsuranceAgeAction {
+  type: typeof ADD_CAR_INSURANCE_AGE
   payload: CarInsuranceState
 }
 
-export interface AddStepAction {
-  type: typeof ADD_STEP
+export interface AddCarInsuranceStepAction {
+  type: typeof ADD_CAR_INSURANCE_STEP
   payload: CarInsuranceState
 }
 
-export interface ResetFormAction {
-  type: typeof RESET_FORM
+export interface ResetCarInsuranceFormAction {
+  type: typeof RESET_CAR_INSURANCE_FORM
 }
 
 export type CarInsuranceActionTypes =
-  | AddNameAction
-  | AddSurnameAction
-  | AddEmailAction
-  | AddAgeAction
-  | AddStepAction
-  | ResetFormAction
+  | AddCarInsuranceNameAction
+  | AddCarInsuranceSurnameAction
+  | AddCarInsuranceEmailAction
+  | AddCarInsuranceAgeAction
+  | AddCarInsuranceStepAction
+  | ResetCarInsuranceFormAction

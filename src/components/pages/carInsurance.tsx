@@ -5,40 +5,47 @@ import SummaryStep from '../organisms/SummaryStep'
 import NameStep from '../organisms/NameStep'
 import { useSelector } from '../../store'
 import {
-  addName,
-  addSurname,
-  addEmail,
-  addAge,
-  addStep,
-  resetForm,
+  addCarInsuranceName,
+  addCarInsuranceSurname,
+  addCarInsuranceEmail,
+  addCarInsuranceAge,
+  addCarInsuranceStep,
+  resetCarInsuranceForm,
 } from '../../store/carInsurance'
 
 const CarInsurance: React.FC = () => {
-  const insurance = useSelector((state) => state.carInsurance)
+  const carInsurance = useSelector((state) => state.carInsurance)
 
   return (
     <>
       <h4>Buying Car Insurance </h4>
-      {insurance.step === 0 && (
+      {carInsurance.step === 0 && (
         <NameStep
-          insurance={insurance}
-          addName={addName}
-          addSurname={addSurname}
-          addStep={addStep}
+          insurance={carInsurance}
+          addName={addCarInsuranceName}
+          addSurname={addCarInsuranceSurname}
+          addStep={addCarInsuranceStep}
         />
       )}
-      {insurance.step === 1 && (
+      {carInsurance.step === 1 && (
         <EmailStep
-          insurance={insurance}
-          addEmail={addEmail}
-          addStep={addStep}
+          insurance={carInsurance}
+          addEmail={addCarInsuranceEmail}
+          addStep={addCarInsuranceStep}
         />
       )}
-      {insurance.step === 2 && (
-        <AgeStep insurance={insurance} addAge={addAge} addStep={addStep} />
+      {carInsurance.step === 2 && (
+        <AgeStep
+          insurance={carInsurance}
+          addAge={addCarInsuranceAge}
+          addStep={addCarInsuranceStep}
+        />
       )}
-      {insurance.step === 3 && (
-        <SummaryStep insurance={insurance} resetForm={resetForm} />
+      {carInsurance.step === 3 && (
+        <SummaryStep
+          insurance={carInsurance}
+          resetForm={resetCarInsuranceForm}
+        />
       )}
     </>
   )

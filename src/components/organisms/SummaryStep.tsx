@@ -3,15 +3,15 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch } from '../../store'
 import {
   CarInsuranceState,
-  resetForm as resetCarInsuranceForm,
+  resetCarInsuranceForm,
 } from '../../store/carInsurance'
 import {
   LifeInsuranceState,
-  resetForm as resetLifeInsuranceForm,
+  resetLifeInsuranceForm,
 } from '../../store/lifeInsurance'
 import {
   HomeInsuranceState,
-  resetForm as resetHomeInsuranceForm,
+  resetHomeInsuranceForm,
 } from '../../store/homeInsurance'
 
 interface SummaryStepProps {

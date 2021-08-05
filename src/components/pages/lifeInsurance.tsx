@@ -1,41 +1,51 @@
 import React from 'react'
-import { NameStep, AgeStep, EmailStep, SummaryStep } from '../organisms'
+import AgeStep from '../organisms/AgeStep'
+import EmailStep from '../organisms/EmailStep'
+import SummaryStep from '../organisms/SummaryStep'
+import NameStep from '../organisms/NameStep'
 import { useSelector } from '../../store'
 import {
-  addName,
-  addSurname,
-  addEmail,
-  addAge,
-  addStep,
-  resetForm,
+  addLifeInsuranceName,
+  addLifeInsuranceSurname,
+  addLifeInsuranceEmail,
+  addLifeInsuranceAge,
+  addLifeInsuranceStep,
+  resetLifeInsuranceForm,
 } from '../../store/lifeInsurance'
 
 const LifeInsurance: React.FC = () => {
-  const insurance = useSelector((state) => state.lifeInsurance)
+  const lifeInsurance = useSelector((state) => state.lifeInsurance)
 
   return (
     <>
-      <h4>Buying Life Insurance</h4>
-      {insurance.step === 0 && (
+      <h4>Buying Car Insurance </h4>
+      {lifeInsurance.step === 0 && (
         <NameStep
-          insurance={insurance}
-          addName={addName}
-          addSurname={addSurname}
-          addStep={addStep}
+          insurance={lifeInsurance}
+          addName={addLifeInsuranceName}
+          addSurname={addLifeInsuranceSurname}
+          addStep={addLifeInsuranceStep}
         />
       )}
-      {insurance.step === 1 && (
+      {lifeInsurance.step === 1 && (
         <EmailStep
-          insurance={insurance}
-          addEmail={addEmail}
-          addStep={addStep}
+          insurance={lifeInsurance}
+          addEmail={addLifeInsuranceEmail}
+          addStep={addLifeInsuranceStep}
         />
       )}
-      {insurance.step === 2 && (
-        <AgeStep insurance={insurance} addAge={addAge} addStep={addStep} />
+      {lifeInsurance.step === 2 && (
+        <AgeStep
+          insurance={lifeInsurance}
+          addAge={addLifeInsuranceAge}
+          addStep={addLifeInsuranceStep}
+        />
       )}
-      {insurance.step === 3 && (
-        <SummaryStep insurance={insurance} resetForm={resetForm} />
+      {lifeInsurance.step === 3 && (
+        <SummaryStep
+          insurance={lifeInsurance}
+          resetForm={resetLifeInsuranceForm}
+        />
       )}
     </>
   )

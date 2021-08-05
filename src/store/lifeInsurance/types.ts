@@ -6,51 +6,51 @@ export type LifeInsuranceState = {
   step: number
 }
 
-export const ADD_NAME = 'ADD_NAME'
+export const ADD_LIFE_INSURANCE_NAME = 'ADD_LIFE_INSURANCE_NAME'
 
-export const ADD_SURNAME = 'ADD_SURNAME'
+export const ADD_LIFE_INSURANCE_SURNAME = 'ADD_LIFE_INSURANCE_SURNAME'
 
-export const ADD_EMAIL = 'ADD_EMAIL'
+export const ADD_LIFE_INSURANCE_EMAIL = 'ADD_LIFE_INSURANCE_EMAIL'
 
-export const ADD_AGE = 'ADD_AGE'
+export const ADD_LIFE_INSURANCE_AGE = 'ADD_LIFE_INSURANCE_AGE'
 
-export const ADD_STEP = 'ADD_STEP'
+export const ADD_LIFE_INSURANCE_STEP = 'ADD_LIFE_INSURANCE_STEP'
 
-export const RESET_FORM = 'RESET_FORM'
+export const RESET_LIFE_INSURANCE_FORM = 'RESET_LIFE_INSURANCE_FORM'
 
-export interface AddNameAction {
-  type: typeof ADD_NAME
+export interface AddLifeInsuranceNameAction {
+  type: typeof ADD_LIFE_INSURANCE_NAME
   payload: LifeInsuranceState
 }
 
-export interface AddSurnameAction {
-  type: typeof ADD_SURNAME
+export interface AddLifeInsuranceSurnameAction {
+  type: typeof ADD_LIFE_INSURANCE_SURNAME
   payload: LifeInsuranceState
 }
 
-export interface AddEmailAction {
-  type: typeof ADD_EMAIL
+export interface AddLifeInsuranceEmailAction {
+  type: typeof ADD_LIFE_INSURANCE_EMAIL
   payload: LifeInsuranceState
 }
 
-export interface AddAgeAction {
-  type: typeof ADD_AGE
+export interface AddLifeInsuranceAgeAction {
+  type: typeof ADD_LIFE_INSURANCE_AGE
   payload: LifeInsuranceState
 }
 
-export interface AddStepAction {
-  type: typeof ADD_STEP
+export interface AddLifeInsuranceStepAction {
+  type: typeof ADD_LIFE_INSURANCE_STEP
   payload: LifeInsuranceState
 }
 
-export interface ResetFormAction {
-  type: typeof RESET_FORM
+export interface ResetLifeInsuranceFormAction {
+  type: typeof RESET_LIFE_INSURANCE_FORM
 }
 
 export type LifeInsuranceActionTypes =
-  | AddNameAction
-  | AddSurnameAction
-  | AddEmailAction
-  | AddAgeAction
-  | AddStepAction
-  | ResetFormAction
+  | AddLifeInsuranceNameAction
+  | AddLifeInsuranceSurnameAction
+  | AddLifeInsuranceEmailAction
+  | AddLifeInsuranceAgeAction
+  | AddLifeInsuranceStepAction
+  | ResetLifeInsuranceFormAction

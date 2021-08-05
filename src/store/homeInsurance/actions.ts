@@ -1,80 +1,89 @@
 import {
   HomeInsuranceState,
-  ADD_NAME,
-  ADD_SURNAME,
-  ADD_EMAIL,
-  ADD_AGE,
-  ADD_STEP,
-  RESET_FORM,
-  AddNameAction,
-  AddSurnameAction,
-  AddEmailAction,
-  AddAgeAction,
-  AddStepAction,
-  ResetFormAction,
+  ADD_HOME_INSURANCE_NAME,
+  ADD_HOME_INSURANCE_SURNAME,
+  ADD_HOME_INSURANCE_EMAIL,
+  ADD_HOME_INSURANCE_AGE,
+  ADD_HOME_INSURANCE_STEP,
+  RESET_HOME_INSURANCE_FORM,
+  AddHomeInsuranceNameAction,
+  AddHomeInsuranceSurnameAction,
+  AddHomeInsuranceEmailAction,
+  AddHomeInsuranceAgeAction,
+  AddHomeInsuranceStepAction,
+  ResetHomeInsuranceFormAction,
 } from './types'
 
-const addName = (
-  homeInsurance: HomeInsuranceState,
+const addHomeInsuranceName = (
+  carInsurance: HomeInsuranceState,
   name: HomeInsuranceState['name']
-): AddNameAction => {
-  const newHomeInsurance = { ...homeInsurance, name }
+): AddHomeInsuranceNameAction => {
+  const newHomeInsurance = { ...carInsurance, name }
 
   return {
-    type: ADD_NAME,
+    type: ADD_HOME_INSURANCE_NAME,
     payload: newHomeInsurance,
   }
 }
 
-const addSurname = (
-  homeInsurance: HomeInsuranceState,
+const addHomeInsuranceSurname = (
+  carInsurance: HomeInsuranceState,
   surname: HomeInsuranceState['surname']
-): AddSurnameAction => {
-  const newHomeInsurance = { ...homeInsurance, surname }
+): AddHomeInsuranceSurnameAction => {
+  const newHomeInsurance = { ...carInsurance, surname }
 
   return {
-    type: ADD_SURNAME,
+    type: ADD_HOME_INSURANCE_SURNAME,
     payload: newHomeInsurance,
   }
 }
 
-const addEmail = (
-  homeInsurance: HomeInsuranceState,
+const addHomeInsuranceEmail = (
+  carInsurance: HomeInsuranceState,
   email: HomeInsuranceState['name']
-): AddEmailAction => {
-  const newHomeInsurance = { ...homeInsurance, email }
+): AddHomeInsuranceEmailAction => {
+  const newHomeInsurance = { ...carInsurance, email }
 
   return {
-    type: ADD_EMAIL,
+    type: ADD_HOME_INSURANCE_EMAIL,
     payload: newHomeInsurance,
   }
 }
 
-const addAge = (
-  homeInsurance: HomeInsuranceState,
+const addHomeInsuranceAge = (
+  carInsurance: HomeInsuranceState,
   age: HomeInsuranceState['age']
-): AddAgeAction => {
-  const newHomeInsurance = { ...homeInsurance, age }
+): AddHomeInsuranceAgeAction => {
+  const newHomeInsurance = { ...carInsurance, age }
 
   return {
-    type: ADD_AGE,
+    type: ADD_HOME_INSURANCE_AGE,
     payload: newHomeInsurance,
   }
 }
 
-const addStep = (homeInsurance: HomeInsuranceState): AddStepAction => {
-  const newHomeInsurance = { ...homeInsurance, step: homeInsurance.step + 1 }
+const addHomeInsuranceStep = (
+  carInsurance: HomeInsuranceState
+): AddHomeInsuranceStepAction => {
+  const newHomeInsurance = { ...carInsurance, step: carInsurance.step + 1 }
 
   return {
-    type: ADD_STEP,
+    type: ADD_HOME_INSURANCE_STEP,
     payload: newHomeInsurance,
   }
 }
 
-const resetForm = (): ResetFormAction => {
+const resetHomeInsuranceForm = (): ResetHomeInsuranceFormAction => {
   return {
-    type: RESET_FORM,
+    type: RESET_HOME_INSURANCE_FORM,
   }
 }
 
-export { addName, addSurname, addEmail, addAge, addStep, resetForm }
+export {
+  addHomeInsuranceName,
+  addHomeInsuranceSurname,
+  addHomeInsuranceEmail,
+  addHomeInsuranceAge,
+  addHomeInsuranceStep,
+  resetHomeInsuranceForm,
+}

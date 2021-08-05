@@ -2,21 +2,21 @@ import * as React from 'react'
 import { useDispatch } from '../../store'
 import {
   CarInsuranceState,
-  addName as addCarInsuranceName,
-  addSurname as addCarInsuranceSurname,
-  addStep as addCarInsuranceStep,
+  addCarInsuranceName,
+  addCarInsuranceSurname,
+  addCarInsuranceStep,
 } from '../../store/carInsurance'
 import {
   LifeInsuranceState,
-  addName as addLifeInsuranceName,
-  addSurname as addLifeInsuranceSurname,
-  addStep as addLifeInsuranceStep,
+  addLifeInsuranceName,
+  addLifeInsuranceSurname,
+  addLifeInsuranceStep,
 } from '../../store/lifeInsurance'
 import {
   HomeInsuranceState,
-  addName as addHomeInsuranceName,
-  addSurname as addHomeInsuranceSurname,
-  addStep as addHomeInsuranceStep,
+  addHomeInsuranceName,
+  addHomeInsuranceSurname,
+  addHomeInsuranceStep,
 } from '../../store/homeInsurance'
 
 interface NameStepProps {
