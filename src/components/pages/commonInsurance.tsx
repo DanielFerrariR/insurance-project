@@ -5,13 +5,6 @@ import { insurances } from '../../definitions/insurances'
 import { routes } from '../../constants'
 import { RootState } from '../../store'
 
-type ValueOf<T> = T[keyof T]
-
-type PickKeyEndWith<
-  T extends string,
-  K extends string
-> = T extends `${infer R}${K}` ? `${R}${K}` : never
-
 type InsuranceKeys = PickKeyEndWith<
   Extract<keyof RootState, string>,
   'Insurance'
