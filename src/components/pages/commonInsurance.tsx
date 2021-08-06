@@ -7,7 +7,14 @@ import { RootState } from '../../store'
 
 type ValueOf<T> = T[keyof T]
 
-type FormState = Exclude<Partial<ValueOf<RootState>>, undefined>
+type PickKeyEndWith<
+  T extends string,
+  K extends string
+> = T extends `${infer R}${K}` ? `${R}${K}` : never
+
+type Keys = PickKeyEndWith<Extract<keyof RootState, string>, 'Insurance'>
+
+type FormState = Partial<ValueOf<Pick<RootState, Keys>>>
 
 interface CommonInsuranceParameters {
   routeName: keyof typeof routes
