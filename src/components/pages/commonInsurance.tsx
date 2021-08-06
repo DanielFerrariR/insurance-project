@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useSelector, useDispatch } from '../../store'
 import { useParams } from 'react-router-dom'
 import { insurances } from '../../definitions/insurances'
-import { routes } from '../../constants'
+import { insuranceRoutes } from '../../constants'
 import { RootState } from '../../store'
 
 type InsuranceKeys = PickKeyEndWith<
@@ -13,7 +13,7 @@ type InsuranceKeys = PickKeyEndWith<
 type FormState = Partial<ValueOf<Pick<RootState, InsuranceKeys>>>
 
 interface CommonInsuranceParameters {
-  routeName: keyof typeof routes
+  routeName: keyof typeof insuranceRoutes
 }
 
 const CommonInsurance: React.FC = () => {

@@ -1,7 +1,7 @@
-const routes = {
+const insuranceRoutes = {
   lifeInsurance: 'lifeInsurance',
   homeInsurance: 'homeInsurance',
   carInsurance: 'carInsurance',
 }
 
-export default routes
+export default insuranceRoutes

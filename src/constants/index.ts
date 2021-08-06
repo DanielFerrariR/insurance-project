@@ -1,1 +1,1 @@
-export { default as routes } from './routes'
+export { default as insuranceRoutes } from './insuranceRoutes'
