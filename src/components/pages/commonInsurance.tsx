@@ -12,9 +12,12 @@ type PickKeyEndWith<
   K extends string
 > = T extends `${infer R}${K}` ? `${R}${K}` : never
 
-type Keys = PickKeyEndWith<Extract<keyof RootState, string>, 'Insurance'>
+type InsuranceKeys = PickKeyEndWith<
+  Extract<keyof RootState, string>,
+  'Insurance'
+>
 
-type FormState = Partial<ValueOf<Pick<RootState, Keys>>>
+type FormState = Partial<ValueOf<Pick<RootState, InsuranceKeys>>>
 
 interface CommonInsuranceParameters {
   routeName: keyof typeof routes
