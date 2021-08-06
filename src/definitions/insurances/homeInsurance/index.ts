@@ -11,7 +11,7 @@ import {
 
 const homeInsurance = {
   name: 'Home Insurance',
-  description: 'An insurance for you home',
+  description: 'An insurance for your home',
   steps: [NameStep, EmailStep, AgeStep, SummaryStep],
   updateForm: updateHomeInsuranceForm,
   resetForm: resetHomeInsuranceForm,

@@ -11,7 +11,7 @@ import {
 
 const carInsurance = {
   name: 'Car Insurance',
-  description: 'An insurance for you car',
+  description: 'An insurance for your car',
   steps: [NameStep, EmailStep, AgeStep, SummaryStep],
   updateForm: updateCarInsuranceForm,
   resetForm: resetCarInsuranceForm,
