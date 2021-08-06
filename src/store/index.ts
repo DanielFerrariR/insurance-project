@@ -22,7 +22,7 @@ export const rootReducer: typeof appReducer = (state, action) => {
   return appReducer(newState, action)
 }
 
-type RootState = ReturnType<typeof appReducer>
+export type RootState = ReturnType<typeof appReducer>
 
 export const useSelector: TypedUseSelectorHook<RootState> = useReduxSelector
 
