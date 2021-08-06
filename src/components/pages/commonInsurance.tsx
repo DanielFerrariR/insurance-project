@@ -31,8 +31,8 @@ const CommonInsurance: React.FC = () => {
 
   return (
     <>
-      <h4>Buying {insuranceDefinition?.name}</h4>
-      <h5>{insuranceDefinition?.description}</h5>
+      <h4>Buying {insuranceDefinition.name}</h4>
+      <h5>{insuranceDefinition.description}</h5>
       <Component
         insurance={insurance}
         updateForm={updatedForm}
