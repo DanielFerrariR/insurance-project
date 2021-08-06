@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 interface InsuranceState {
   name: string
@@ -13,13 +13,6 @@ interface SummaryStepProps {
 }
 
 const SummaryStep: React.FC<SummaryStepProps> = ({ insurance, resetForm }) => {
-  const history = useHistory()
-
-  const handlePurchase = () => {
-    resetForm()
-    history.push('/')
-  }
-
   return (
     <>
       <div>Name: {insurance.name}</div>
@@ -27,7 +20,7 @@ const SummaryStep: React.FC<SummaryStepProps> = ({ insurance, resetForm }) => {
       <div>Email: {insurance.email}</div>
       <div>Age: {insurance.age}</div>
       <div>
-        <Link to="" onClick={handlePurchase}>
+        <Link to="/" onClick={() => resetForm()}>
           Purchase
         </Link>
       </div>
