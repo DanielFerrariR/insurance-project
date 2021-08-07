@@ -2,25 +2,20 @@ import * as React from 'react'
 import { useSelector, useDispatch } from '../../store'
 import { useParams } from 'react-router-dom'
 import { insurances } from '../../definitions/insurances'
-import { insuranceRoutes } from '../../constants'
 import { RootState } from '../../store'
+import { InsurancesKeys, INSURANCES_ROUTES } from '../../constants'
 
-type InsuranceKeys = PickKeyEndWith<
-  Extract<keyof RootState, string>,
-  'Insurance'
->
-
-type FormState = Partial<ValueOf<Pick<RootState, InsuranceKeys>>>
+type FormState = Partial<ValueOf<Pick<RootState, InsurancesKeys>>>
 
 interface CommonInsuranceParameters {
-  routeName: keyof typeof insuranceRoutes
+  routeName: string
 }
 
 const CommonInsurance: React.FC = () => {
   const { routeName } = useParams<CommonInsuranceParameters>()
-  const insurance = useSelector((state) => state[routeName])
+  const insurance = useSelector((state) => state[INSURANCES_ROUTES[routeName]])
   const dispatch = useDispatch()
-  const insuranceDefinition = insurances[routeName]
+  const insuranceDefinition = insurances[INSURANCES_ROUTES[routeName]]
   const Component = insuranceDefinition?.steps[insurance.step]
 
   const updatedForm = (form: FormState) =>

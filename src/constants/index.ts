@@ -1,1 +1,2 @@
-export { default as insuranceRoutes } from './insuranceRoutes'
+export { default as INSURANCES_ROUTES } from './insurancesRoutes'
+export * from './insurancesRoutes'
