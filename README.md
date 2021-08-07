@@ -128,7 +128,7 @@ $ yarn check-types
 # Checks prettier formatting error
 $ yarn check-format
 
-# Checks Eslint errors
+# Checks eslint errors
 $ yarn lint
 
 # Checks jest unit tests errors (The flag '--maxWorkers 1' can help with heavy memory usage on CI)
