@@ -1,10 +1,10 @@
+const fs = require('fs')
 const path = require('path')
-const Dotenv = require('dotenv-webpack')
 const CleanPlugin = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const fs = require('fs')
 
 module.exports = {
   mode: 'production',

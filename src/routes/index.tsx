@@ -1,9 +1,9 @@
+import * as React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Switch, Route } from 'react-router-dom'
-import * as React from 'react'
+import { Dashboard, CommonInsurance } from 'src/components/pages'
 import { logo } from 'src/images'
 import './index.css'
-import { Dashboard, CommonInsurance } from 'src/components/pages'
 
 const Routes: React.FC = () => (
   <div className="App">

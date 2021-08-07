@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { useSelector, useDispatch, RootState } from 'src/store'
 import { useParams } from 'react-router-dom'
-import { insurances } from 'src/definitions/insurances'
 import { InsurancesKeys, INSURANCES_ROUTES } from 'src/constants'
+import { insurances } from 'src/definitions/insurances'
+import { useSelector, useDispatch, RootState } from 'src/store'
 
 type FormState = ValueOf<Pick<RootState, InsurancesKeys>>
 

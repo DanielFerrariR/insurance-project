@@ -1,11 +1,11 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/integration/react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { store, persistor } from './utils/redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import Routes from './routes'
+import { store, persistor } from './utils/redux'
+import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>

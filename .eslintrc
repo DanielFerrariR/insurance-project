@@ -44,7 +44,24 @@
     "no-restricted-syntax": "off",
     "no-await-in-loop": "off",
     "no-new-func": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling"],
+        "pathGroups": [
+          { "pattern": "react", "group": "external", "position": "before" },
+          {
+            "pattern": "prop-types",
+            "group": "external",
+            "position": "before"
+          },
+          { "pattern": "./*.scss", "group": "sibling", "position": "after" }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "prop-types"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
@@ -111,7 +128,19 @@
         "@typescript-eslint/no-implied-eval": "off",
         "no-new-func": "off",
         "consistent-return": "off",
-        "@typescript-eslint/naming-convention": ["off"]
+        "@typescript-eslint/naming-convention": ["off"],
+        "import/order": [
+          "error",
+          {
+            "groups": ["builtin", "external", "internal", "parent", "sibling"],
+            "pathGroups": [
+              { "pattern": "react", "group": "external", "position": "before" },
+              { "pattern": "./*.scss", "group": "sibling", "position": "after" }
+            ],
+            "pathGroupsExcludedImportTypes": ["react"],
+            "alphabetize": { "order": "asc", "caseInsensitive": true }
+          }
+        ]
       }
     }
   ]

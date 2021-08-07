@@ -4,11 +4,11 @@ import {
   RenderOptions,
   RenderResult
 } from '@testing-library/react'
-import { createStore } from 'redux'
+import { createMemoryHistory } from 'history'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router-dom'
+import { createStore } from 'redux'
 import { rootReducer, RootState } from 'src/store'
-import { createMemoryHistory } from 'history'
 
 interface Options {
   initialState?: RootState

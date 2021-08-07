@@ -1,10 +1,10 @@
-const path = require('path')
-const webpack = require('webpack')
-const Dotenv = require('dotenv-webpack')
-const CleanPlugin = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
 const fs = require('fs')
+const path = require('path')
+const CleanPlugin = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   ...require('./webpack.config.prod'),

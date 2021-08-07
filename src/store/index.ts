@@ -1,12 +1,12 @@
-import { combineReducers, CombinedState } from 'redux'
 import {
   useDispatch as useReduxDispatch,
   useSelector as useReduxSelector,
   TypedUseSelectorHook
 } from 'react-redux'
-import { lifeInsuranceReducer } from './lifeInsurance'
+import { combineReducers, CombinedState } from 'redux'
 import { carInsuranceReducer } from './carInsurance'
 import { homeInsuranceReducer } from './homeInsurance'
+import { lifeInsuranceReducer } from './lifeInsurance'
 
 const appReducer = combineReducers({
   lifeInsurance: lifeInsuranceReducer,

@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
+import logger from 'redux-logger'
 import { persistStore, persistReducer, createTransform } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import logger from 'redux-logger'
 import { rootReducer } from 'src/store'
 
 const replacer = (_key: string, value: any) =>
