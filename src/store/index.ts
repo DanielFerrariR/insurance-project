@@ -2,7 +2,7 @@ import { combineReducers, CombinedState } from 'redux'
 import {
   useDispatch as useReduxDispatch,
   useSelector as useReduxSelector,
-  TypedUseSelectorHook,
+  TypedUseSelectorHook
 } from 'react-redux'
 import { lifeInsuranceReducer } from './lifeInsurance'
 import { carInsuranceReducer } from './carInsurance'
@@ -11,12 +11,12 @@ import { homeInsuranceReducer } from './homeInsurance'
 const appReducer = combineReducers({
   lifeInsurance: lifeInsuranceReducer,
   carInsurance: carInsuranceReducer,
-  homeInsurance: homeInsuranceReducer,
+  homeInsurance: homeInsuranceReducer
 })
 
 export const rootReducer: typeof appReducer = (state, action) => {
   const newState = {
-    ...state,
+    ...state
   } as CombinedState<RootState> | undefined
 
   return appReducer(newState, action)

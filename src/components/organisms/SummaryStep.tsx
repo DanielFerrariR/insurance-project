@@ -1,24 +1,29 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-interface InsuranceState {
-  name: string
-  surname: string
-  email: string
-  age: number
+interface FormState {
+  [key: string]: string | number
 }
+
 interface SummaryStepProps {
-  insurance: InsuranceState
+  form: FormState
   resetForm: () => void
 }
 
-const SummaryStep: React.FC<SummaryStepProps> = ({ insurance, resetForm }) => {
+const SummaryStep: React.FC<SummaryStepProps> = ({ form, resetForm }) => {
+  const capitalize = (word: string) =>
+    word.charAt(0).toUpperCase() + word.slice(1)
+
   return (
     <>
-      <div>Name: {insurance.name}</div>
-      <div>Surname: {insurance.surname}</div>
-      <div>Email: {insurance.email}</div>
-      <div>Age: {insurance.age}</div>
+      {Object.entries(form).map(([key, value]) => {
+        if (key === 'step') return null
+        return (
+          <div key={key}>
+            {capitalize(key)}: {value}
+          </div>
+        )
+      })}
       <div>
         <Link to="/" onClick={() => resetForm()}>
           Purchase

@@ -1,8 +1,7 @@
 export type CarInsuranceState = {
-  name: string
-  surname: string
-  email: string
-  age: number
+  name?: string
+  surname?: string
+  email?: string
   step: number
 }
 

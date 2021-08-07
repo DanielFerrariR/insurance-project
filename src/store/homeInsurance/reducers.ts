@@ -2,7 +2,7 @@ import {
   HomeInsuranceState,
   UPDATE_HOME_INSURANCE_FORM,
   RESET_HOME_INSURANCE_FORM,
-  HomeInsuranceActionTypes,
+  HomeInsuranceActionTypes
 } from './types'
 
 const initialState: HomeInsuranceState = {
@@ -10,7 +10,7 @@ const initialState: HomeInsuranceState = {
   surname: '',
   email: '',
   age: 0,
-  step: 0,
+  step: 0
 }
 
 const homeInsuranceReducer = (

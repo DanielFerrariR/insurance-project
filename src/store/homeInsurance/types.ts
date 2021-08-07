@@ -1,8 +1,8 @@
 export type HomeInsuranceState = {
-  name: string
-  surname: string
-  email: string
-  age: number
+  name?: string
+  surname?: string
+  email?: string
+  age?: number
   step: number
 }
 

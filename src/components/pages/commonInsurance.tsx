@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { useSelector, useDispatch } from '../../store'
+import { useSelector, useDispatch, RootState } from 'src/store'
 import { useParams } from 'react-router-dom'
-import { insurances } from '../../definitions/insurances'
-import { RootState } from '../../store'
-import { InsurancesKeys, INSURANCES_ROUTES } from '../../constants'
+import { insurances } from 'src/definitions/insurances'
+import { InsurancesKeys, INSURANCES_ROUTES } from 'src/constants'
 
-type FormState = Partial<ValueOf<Pick<RootState, InsurancesKeys>>>
+type FormState = ValueOf<Pick<RootState, InsurancesKeys>>
 
 interface CommonInsuranceParameters {
   routeName: string
@@ -32,7 +31,7 @@ const CommonInsurance: React.FC = () => {
       <h4>Buying {insuranceDefinition.name}</h4>
       <h5>{insuranceDefinition.description}</h5>
       <Component
-        insurance={insurance}
+        form={insurance}
         updateForm={updatedForm}
         resetForm={resetForm}
       />

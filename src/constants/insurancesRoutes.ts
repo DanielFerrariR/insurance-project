@@ -1,4 +1,4 @@
-import { RootState } from '../store'
+import { RootState } from 'src/store'
 
 export type InsurancesKeys = PickKeyEndWith<
   Extract<keyof RootState, string>,
@@ -12,7 +12,7 @@ interface InsurancesRoutes {
 const INSURANCES_ROUTES: InsurancesRoutes = {
   'life-insurance': 'lifeInsurance',
   'home-insurance': 'homeInsurance',
-  'car-insurance': 'carInsurance',
+  'car-insurance': 'carInsurance'
 }
 
 export default INSURANCES_ROUTES

@@ -2,15 +2,14 @@ import {
   CarInsuranceState,
   UPDATE_CAR_INSURANCE_FORM,
   RESET_CAR_INSURANCE_FORM,
-  CarInsuranceActionTypes,
+  CarInsuranceActionTypes
 } from './types'
 
 const initialState: CarInsuranceState = {
   name: '',
   surname: '',
   email: '',
-  age: 0,
-  step: 0,
+  step: 0
 }
 
 const carInsuranceReducer = (

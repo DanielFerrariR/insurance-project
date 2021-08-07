@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { persistStore, persistReducer, createTransform } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import logger from 'redux-logger'
-import { rootReducer } from '../store'
+import { rootReducer } from 'src/store'
 
 const replacer = (_key: string, value: any) =>
   value instanceof Date ? value.toISOString() : value
@@ -20,7 +20,7 @@ const decode = (toRehydrate: any) => JSON.parse(toRehydrate, reviver)
 const persistConfig = {
   key: 'root',
   storage,
-  transforms: [createTransform(encode, decode)],
+  transforms: [createTransform(encode, decode)]
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

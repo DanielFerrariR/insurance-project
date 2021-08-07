@@ -2,7 +2,7 @@ import {
   LifeInsuranceState,
   UPDATE_LIFE_INSURANCE_FORM,
   RESET_LIFE_INSURANCE_FORM,
-  LifeInsuranceActionTypes,
+  LifeInsuranceActionTypes
 } from './types'
 
 const initialState: LifeInsuranceState = {
@@ -10,7 +10,7 @@ const initialState: LifeInsuranceState = {
   surname: '',
   email: '',
   age: 0,
-  step: 0,
+  step: 0
 }
 
 const lifeInsuranceReducer = (

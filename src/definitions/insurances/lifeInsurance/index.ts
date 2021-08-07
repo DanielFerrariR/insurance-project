@@ -2,19 +2,19 @@ import {
   AgeStep,
   EmailStep,
   SummaryStep,
-  NameStep,
-} from '../../../components/organisms'
+  NameStep
+} from 'src/components/organisms'
 import {
   updateLifeInsuranceForm,
-  resetLifeInsuranceForm,
-} from '../../../store/lifeInsurance'
+  resetLifeInsuranceForm
+} from 'src/store/lifeInsurance'
 
 const lifeInsurance = {
   name: 'Life Insurance',
   description: 'An insurance for your life',
   steps: [NameStep, EmailStep, AgeStep, SummaryStep],
   updateForm: updateLifeInsuranceForm,
-  resetForm: resetLifeInsuranceForm,
+  resetForm: resetLifeInsuranceForm
 }
 
 export default lifeInsurance

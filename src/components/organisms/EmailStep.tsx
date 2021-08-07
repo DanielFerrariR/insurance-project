@@ -1,35 +1,40 @@
 import * as React from 'react'
+import { ensure } from 'src/utils'
 
-interface InsuranceState {
-  email: string
+interface FormState {
+  email?: string
   step: number
 }
 
 interface EmailStepProps {
-  insurance: InsuranceState
-  updateForm: (form: InsuranceState) => void
+  form: FormState
+  updateForm: (form: FormState) => void
 }
 
-const EmailStep: React.FC<EmailStepProps> = ({ insurance, updateForm }) => {
+const EmailStep: React.FC<EmailStepProps> = ({ form, updateForm }) => {
+  const email = ensure(form.email)
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    updateForm({ ...insurance, step: insurance.step + 1 })
+    updateForm({ ...form, step: form.step + 1 })
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="email-step-email">Email:</label>{' '}
-        <input
-          id="email-step-email"
-          type="email"
-          onChange={(event) =>
-            updateForm({ ...insurance, email: event.target.value })
-          }
-          value={insurance.email}
-        />
+        <label htmlFor="email-step-email">
+          Email:{' '}
+          <input
+            id="email-step-email"
+            type="email"
+            onChange={(event) =>
+              updateForm({ ...form, email: event.target.value })
+            }
+            value={email}
+          />
+        </label>
       </div>
-      <button type="submit" disabled={!insurance.email}>
+      <button type="submit" disabled={!email}>
         Next
       </button>
     </form>
