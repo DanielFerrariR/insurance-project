@@ -13,15 +13,6 @@
       content=<%= htmlWebpackPlugin.options.description %>
     />
     <!-- prettier-ignore -->
-    <% if (htmlWebpackPlugin.options.isCypress) { %>
-    <script>
-      if (window.Cypress) {
-        window.__REACT_DEVTOOLS_GLOBAL_HOOK__ =
-          window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__
-      }
-    </script>
-    <% } %>
-    <!-- prettier-ignore -->
     <%= htmlWebpackPlugin.options.manifest %>
     <%= htmlWebpackPlugin.options.appleTouchIcon %>
     <link rel="icon" href="<%= htmlWebpackPlugin.files.favicon %>" />

@@ -116,7 +116,6 @@ $ yarn commit
 
 - Set the environment variables in the CI environment variable section.
 - The only command needed to be put on CI is 'yarn setup' which tests formatting with prettier, eslint errors, typescript errors and all tests.
-- You need chrome installed on CI for cypress (prefer cypress/browsers 12.16.1 docker image which comes with chrome).
 - In case 'yarn setup' is too heavy for your CI. You can separate each needed script like:
 
 ```bash

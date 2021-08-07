@@ -33,13 +33,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": [
-          "spec/**/*.*",
-          "electron/**/*.*",
-          "storybook/**/*.*",
-          "typings/**/*.*",
-          "/*.*"
-        ]
+        "devDependencies": ["spec/**/*.*", "typings/**/*.*", "/*.*"]
       }
     ],
     "jsx-a11y/anchor-is-valid": "off",
@@ -102,13 +96,7 @@
         "import/no-extraneous-dependencies": [
           "error",
           {
-            "devDependencies": [
-              "storybook/**/*.*",
-              "spec/**/*.*",
-              "electron/**/*.*",
-              "typings/**/*.*",
-              "/*.*"
-            ]
+            "devDependencies": ["spec/**/*.*", "typings/**/*.*", "/*.*"]
           }
         ],
         "jsx-a11y/anchor-is-valid": "off",
