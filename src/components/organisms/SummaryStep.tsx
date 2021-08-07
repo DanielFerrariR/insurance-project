@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 interface FormState {
   [key: string]: string | number
+  step: number
 }
 
 interface SummaryStepProps {
