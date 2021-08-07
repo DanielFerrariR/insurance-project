@@ -47,25 +47,19 @@
 - npm 6.14.12
 - node 14.16.1
 
-2. **Create a .env file with the required variables:**
-
-```sh
-EXAMPLE=
-```
-
-3. **Install all dependencies with yarn (not npm!!)**
+2. **Install all dependencies with yarn (not npm!!)**
 
 ```sh
 yarn
 ```
 
-4. **Start the webpack-dev-server**
+3. **Start the webpack-dev-server**
 
 ```sh
 yarn dev
 ```
 
-5. **Commands**
+4. **Commands**
 
 ```bash
 # Installs all dependendies
