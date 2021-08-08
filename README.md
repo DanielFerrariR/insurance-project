@@ -1,46 +1,149 @@
-# Getting Started with Create React App
+<h1 align="center">
+  Frontend App
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a align="center" href="./CHANGELOG.md">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue" />
+</a>
 
-## Available Scripts
+## TOC
 
-In the project directory, you can run:
+- [Workspace](#workspace)
+- [Configuration](#configuration)
+- [Tests](#tests)
+- [CI Configuration](#ci-configuration)
+- [Deploy](#deploy)
+- [Links](#links)
 
-### `yarn start`
+## Workspace
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Visual Studio Code 1.45.1
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  - VSCode extensions:
 
-### `yarn test`
+    - Prettier - Code formatter 4.7.0
+    - Eslint 2.1.5
+    - VSCode MDX 0.1.4
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - VSCode settings:
 
-### `yarn build`
+  ```sh
+  {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    },
+    "javascript.validate.enable": false,
+    "eslint.validate": ["markdown", "md", "mdx"],
+    "prettier.requireConfig": true,
+  }
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Configuration
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Install these packages (prefer the listed versions):**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- yarn 1.22.10
+- npm 6.14.12
+- node 14.16.1
 
-### `yarn eject`
+2. **Install all dependencies with yarn (not npm!!)**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+yarn
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Start the webpack-dev-server**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+yarn dev
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. **Commands**
 
-## Learn More
+```bash
+# Installs all dependendies
+$ yarn
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Runs for web production (needs yarn build first)
+$ yarn start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Runs for web development
+$ yarn dev
+
+# Builds for web (compiled to dist)
+$ yarn build
+
+# Runs unit tests with Jest
+$ yarn test (picks automatically test:watch on local machine and test:coverage on CI)
+$ yarn test:coverage (creates coverage folder)
+$ yarn test:watch (with --watch flag)
+$ yarn test:debug (to use chrome to debug jest tests)
+
+# Checks Eslint errors
+$ yarn lint
+
+# Formats all files with prettier
+$ yarn format
+
+# Checks if all files are formatted with prettier
+$ yarn check-format
+
+# Checks typescript errors
+$ yarn check-types
+
+# CI validation command
+$ yarn setup
+
+# Analyzes the compiled files with source-map-explorer
+$ yarn analyze
+
+# Commits with karma interface
+$ yarn commit
+```
+
+## Tests
+
+- Unit tests are in spec/jest/unit.
+
+## CI configuration
+
+- Set the environment variables in the CI environment variable section.
+- The only command needed to be put on CI is 'yarn setup' which tests formatting with prettier, eslint errors, typescript errors and all tests.
+- In case 'yarn setup' is too heavy for your CI. You can separate each needed script like:
+
+```bash
+# Installs all dependencies
+$ yarn
+
+# Checks typescript errors
+$ yarn check-types
+
+# Checks prettier formatting error
+$ yarn check-format
+
+# Checks eslint errors
+$ yarn lint
+
+# Checks jest unit tests errors (The flag '--maxWorkers 1' can help with heavy memory usage on CI)
+$ yarn test:coverage
+```
+
+## Deploy
+
+1. First, be sure you did everything from the configuration section (steps 1 to 2 are the most important ones).
+2. 'yarn build' command will compile all files and put them into dist folder.
+3. Install Apache. (I'm using XAMPP for this example. Link: [Apache](https://www.apachefriends.org/download.html))
+4. Clean up htdocs folder of xampp/htdocs.
+5. Put all files from dist folder into xampp/htdocs folder.
+6. Open XAMPP and, on the line of module apache, click on the 'Start' button.
+7. Access 'localhost' from your browser and see that the page loads correctly. It will still not work if you try to access a route manually (like 'localhost/login'). See below how to fix it.
+
+- For react router works correctly, you need to create a file '.htaccess' in the root of htdocs directory. Put this info there:
+
+```bash
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+```
