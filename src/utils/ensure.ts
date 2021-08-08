@@ -1,15 +1,15 @@
 /**
- * Removes the falsy types `undefined`, `null` and `false`  or
- * throws an error if any provided value has these values
- * @param values - The values
- * @returns The values without the falsy types
+ * Removes the falsy types `undefined`, `null` and `false` or
+ * throws an error if any provided argument is `undefined`, `null` and `false`
+ * @param args - The arguments
+ * @returns The arguments without the falsy types
  */
-const ensure = <T>(...values: (T | undefined | null | false)[]): T[] =>
-  values.map((value) => {
-    if (value === undefined || value === null || value === false) {
-      throw new TypeError('This value was promised to be there.')
+const ensure = <T>(...args: (T | undefined | null | false)[]): T[] =>
+  args.map((arg) => {
+    if (arg === undefined || arg === null || arg === false) {
+      throw new TypeError('This value was promised to be here.')
     }
-    return value
+    return arg
   })
 
 export default ensure
