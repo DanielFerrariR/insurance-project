@@ -11,7 +11,9 @@ import { createStore } from 'redux'
 import { rootReducer, RootState } from 'src/store'
 
 interface Options {
-  initialState?: RootState
+  initialState?: {
+    [T in Extract<keyof RootState, string>]?: RootState[T]
+  }
   route?: string
   rtlOptions?: RenderOptions
 }
