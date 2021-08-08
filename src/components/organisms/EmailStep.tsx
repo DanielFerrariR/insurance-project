@@ -12,7 +12,7 @@ interface EmailStepProps {
 }
 
 const EmailStep: React.FC<EmailStepProps> = ({ form, updateForm }) => {
-  const email = ensure(form.email)
+  const [email] = ensure(form.email)
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()

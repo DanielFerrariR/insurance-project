@@ -13,8 +13,7 @@ interface NameStepProps {
 }
 
 const NameStep: React.FC<NameStepProps> = ({ form, updateForm }) => {
-  const name = ensure(form.name)
-  const surname = ensure(form.surname)
+  const [name, surname] = ensure(form.name, form.surname)
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()

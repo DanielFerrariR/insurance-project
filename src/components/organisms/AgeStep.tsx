@@ -12,7 +12,7 @@ interface AgeStepProps {
 }
 
 const AgeStep: React.FC<AgeStepProps> = ({ form, updateForm }) => {
-  const age = ensure(form.age)
+  const [age] = ensure(form.age)
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
