@@ -24,6 +24,8 @@ export const rootReducer: typeof appReducer = (state, action) => {
 
 export type RootState = ReturnType<typeof appReducer>
 
+export type RootStateKeys = Extract<keyof RootState, string>
+
 export const useSelector: TypedUseSelectorHook<RootState> = useReduxSelector
 
 type ExtractedActions = typeof appReducer extends (

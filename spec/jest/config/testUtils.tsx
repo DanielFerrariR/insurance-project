@@ -8,11 +8,11 @@ import { createMemoryHistory } from 'history'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router-dom'
 import { createStore } from 'redux'
-import { rootReducer, RootState } from 'src/store'
+import { rootReducer, RootState, RootStateKeys } from 'src/store'
 
 interface Options {
   initialState?: {
-    [T in Extract<keyof RootState, string>]?: RootState[T]
+    [T in RootStateKeys]?: RootState[T]
   }
   route?: string
   rtlOptions?: RenderOptions

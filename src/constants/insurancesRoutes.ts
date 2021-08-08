@@ -1,9 +1,6 @@
-import { RootState } from 'src/store'
+import { RootStateKeys } from 'src/store'
 
-export type InsurancesKeys = PickKeyEndWith<
-  Extract<keyof RootState, string>,
-  'Insurance'
->
+export type InsurancesKeys = PickKeyEndWith<RootStateKeys, 'Insurance'>
 
 interface InsurancesRoutes {
   [route: string]: InsurancesKeys
